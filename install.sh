@@ -12,18 +12,19 @@ clear
 
 installTheme(){
     cd /var/www/
-    tar -cvf IceMinecraftTheme.tar.gz pterodactyl
+    tar -cvf PizzaByteTheme.tar.gz pterodactyl
     echo "Installing theme..."
     cd /var/www/pterodactyl
-    rm -r IceMinecraftTheme
-    git clone https://github.com/Angelillo15/IceMinecraftTheme.git
-    cd IceMinecraftTheme
-    rm /var/www/pterodactyl/resources/scripts/IceMinecraftTheme.css
+    rm -r PizzaByteTheme
+    git clone https://github.com/yosef022/PizzaByteTheme.git
+    cd PizzaByteTheme
+    rm /var/www/pterodactyl/resources/scripts/PizzaByteTheme.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     rm /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
-    mv resources/scripts/IceMinecraftTheme.css /var/www/pterodactyl/resources/scripts/IceMinecraftTheme.css
+    mv resources/scripts/PizzaByteTheme.css /var/www/pterodactyl/resources/scripts/PizzaByteTheme.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
+    mv resources/scripts/background.jpg /var/www/pterodactyl/public/background.jpg
     cd /var/www/pterodactyl
 
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -52,14 +53,14 @@ installThemeQuestion(){
 }
 
 repair(){
-    bash <(curl https://raw.githubusercontent.com/Angelillo15/IceMinecraftTheme/main/repair.sh)
+    bash <(curl https://raw.githubusercontent.com/yosef022/PizzaByteTheme/main/repair.sh)
 }
 
 restoreBackUp(){
     echo "Restoring backup..."
     cd /var/www/
-    tar -xvf IceMinecraftTheme.tar.gz
-    rm IceMinecraftTheme.tar.gz
+    tar -xvf PizzaByteTheme.tar.gz
+    rm PizzaByteTheme.tar.gz
 
     cd /var/www/pterodactyl
     yarn build:production
@@ -81,6 +82,7 @@ printf "${blue}   '      '   )/       '    )/                '               '  
 printf "${blue}              '             '                                                   '                                    '      \n"
 echo ""
 echo "Copyright (c) 2022 Angelillo15 | angelillo15.es"
+echo "Edits Copyright (c) 2022 yosef022 | yosef__#1337"
 echo "This program is free software: you can redistribute it and/or modify"
 echo ""
 echo "Discord: https://discord.angelillo15.es/"
