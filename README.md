@@ -1,4 +1,4 @@
-# IceMinecraftTheme
+# PizzaByteTheme
 
 Install script:
 ```sh
